@@ -1,0 +1,295 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg">
+            <div class="card">
+                <form action="/account_update" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <div class="card-header">
+                        <strong>Datos de la Cuenta</strong>
+                    </div>
+                    <div class="card-body card-block">
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Datos del Usuario</label>
+                            </div>
+                            <div class="col col-md-9">
+                                <div class="row">
+                                    <!-- Email -->
+                                    <div class="col-sm-4">
+                                        <p class="form-control-static">{{ user_data.email }}</p>
+                                        <small class="form-text">Email</small></div>
+                                    <!-- Nombres -->
+                                    <div class="col-sm-4">
+                                        <p class="form-control-static">{{ user_data.given_name }}</p>
+                                        <small class="form-text text-muted">Nombres</small></div>
+                                    <!-- Apellidos -->
+                                    <div class="col-sm-4">
+                                        <p class="form-control-static">{{ user_data.family_name }}</p>
+                                        <small class="form-text text-muted">Apellidos</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Teléfono -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Teléfono</label>
+                            </div>
+                            <div class="col col-md-3">
+                                <input id="phone" name="phone" type="tel" class="form-control"
+                                        {% if user_data.telephone_number!=None %}
+                                       value="{{ user_data.telephone_number }}"{% endif %}
+                                       required>
+                                <small class="form-text text-muted">Código de País y Número Telefónico</small>
+                            </div>
+                            <!-- Verificar Teléfono -->
+                            <div class="col col-md-6">
+                                {% if user_data.telephone_number==None %}
+                                    <div class="alert alert-info" role="alert">
+                                        <i class="fa fa-info-circle"></i> Tendremos que verificar tu Teléfono Móvil
+                                        antes de realizar cualquier operación.
+                                    </div>
+                                {% else %}
+                                    {% if user_data.verified_telephone==0 %}
+                                        <div class="alert alert-danger" role="alert">
+                                            <a href="{{ url_for('verify_telephone') }}">
+                                                <i class="fa fa-check" style="color:black;"></i> Verifica tu Teléfono
+                                                Móvil</a> antes de realizar cualquier operación.
+                                        </div>
+                                    {% else %}
+                                        <div class="alert alert-success" role="alert">
+                                            <i class="fa fa-check" style="color:dodgerblue;"></i><i class="fa fa-check"
+                                                                                                    style="color:dodgerblue;"></i>
+                                            Tu Teléfono Móvil está Verificado.
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- Documento de Identidad -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Documento de Identidad</label>
+                            </div>
+                            <div class="col col-md-9">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <select id="document_country" name="document_country"
+                                                class="selectpicker countrypicker form-control" data-flag="true"
+                                                {% if user_data.document_country==None %}
+                                                data-default="PE"
+                                                {% else %}
+                                                data-default="{{ user_data.document_country }}"
+                                                {% endif %}
+                                                data-live-search="true"></select>
+                                        <small class="form-text text-muted">País Emisor</small></div>
+                                    <div class="col-sm-4">
+                                        <select id="document_type" name="document_type"
+                                                class="form-control" required>
+                                            <option value="DNI"
+                                                    {% if user_data.document_type==None or user_data.document_type=="DNI" %}
+                                                    selected{% endif %}>Documento Nacional de Identidad
+                                            </option>
+                                            <option value="NIT"
+                                                    {% if user_data.document_type=="NIT" %}selected{% endif %}>RUC /
+                                                Número de Identificación Tributaria
+                                            </option>
+                                            <option value="PAS"
+                                                    {% if user_data.document_type=="PAS" %}selected{% endif %}>Pasaporte
+                                            </option>
+                                            <option value="CEX"
+                                                    {% if user_data.document_type=="CEX" %}selected{% endif %}>Carnét /
+                                                Cédula de Extranjería
+                                            </option>
+                                            <option value="OTR"
+                                                    {% if user_data.document_type=="OTR" %}selected{% endif %}>Otro /
+                                                Documento Temporal de Permanencia
+                                            </option>
+                                        </select>
+                                        <small class="form-text text-muted">Tipo de Documento</small></div>
+                                    <div class="col-sm-4">
+                                        <input type="text" id="document_number" name="document_number"
+                                               class="form-control"
+                                                {% if user_data.document_number!=None %}
+                                               value="{{ user_data.document_number }}"{% endif %}
+                                               required>
+                                        <small class="form-text text-muted">Número de Documento</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fecha de Nacimiento -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Fecha de Nacimiento</label>
+                            </div>
+                            <div class="col col-md-3">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar-alt">
+                                        </i>
+                                    </div>
+                                    <input class="form-control" id="birth_date" name="birth_date"
+                                           placeholder="DD/MM/YYYY" type="text"
+                                           {% if user_data.birth_date!=None %}value="{{ user_data.birth_date.strftime('%d/%m/%Y') }}"{% endif %}
+                                           required/>
+                                </div>
+                                <small class="form-text text-muted">Formato Día, Mes y Año</small>
+                            </div>
+                            <!-- Verificar Identidad -->
+                            <div class="col col-md-6">
+                                {% if user_data.document_number==None %}
+                                    <div class="alert alert-info" role="alert">
+                                        <i class="fa fa-info-circle"></i> Podrás verificar tu Documento de Identidad
+                                        para acceder a beneficios exclusivos para miembros verificados.
+                                    </div>
+                                {% else %}
+                                    {% if user_data.verified_document==0 %}
+                                        <div class="alert alert-warning" role="alert">
+                                            <a href="{{ url_for('verify_identity') }}">
+                                                <i class="fa fa-check" style="color:black;"></i> Verifica tu Documento
+                                                de
+                                                Identidad
+                                            </a> y accede a beneficios exclusivos para miembros verificados.
+                                        </div>
+                                    {% else %}
+                                        <div class="alert alert-success" role="alert">
+                                            <i class="fa fa-check" style="color:dodgerblue;"></i><i class="fa fa-check"
+                                                                                                    style="color:dodgerblue;"></i>
+                                            Tu Documento de Identidad está Verificado.
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- Dirección de Residencia-->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Dirección de Residencia</label>
+                            </div>
+                            <div class="col col-md-5">
+                                <input type="text" id="address_line1" name="address_line1"
+                                       placeholder="Vía, Nombre de Calle, Número, Departamento" class="form-control"
+                                       {% if user_data.address_line1!=None %}value="{{ user_data.address_line1 }}"{% endif %}
+                                       required>
+                                <small class="form-text text-muted">Dirección</small>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" id="address_line2" name="address_line2"
+                                       placeholder="Distrito, Provincia, Región" class="form-control"
+                                       {% if user_data.address_line2!=None %}value="{{ user_data.address_line2 }}"{% endif %}
+                                       required>
+                                <small class="form-text text-muted">Distrito, Provincia, Región</small></div>
+                        </div>
+                        <!-- País de Residencia -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">País de Residencia</label>
+                            </div>
+                            <div class="col col-md-3">
+                                <select id="address_country" name="address_country"
+                                        class="selectpicker countrypicker form-control" data-flag="true"
+                                        {% if user_data.address_country==None %}
+                                        data-default="PE"
+                                        {% else %}
+                                        data-default="{{ user_data.address_country }}"
+                                        {% endif %}
+                                        data-live-search="true"></select>
+                                <small class="form-text text-muted">País de Residencia</small>
+                            </div>
+                            <!-- Verificar Dirección -->
+                            <div class="col col-md-6">
+                                {% if user_data.address_line1==None %}
+                                    <div class="alert alert-info" role="alert">
+                                        <i class="fa fa-info-circle"></i> Podrás verificar tu Dirección de Residencia
+                                        para mejorar tu calificación de confianza ante otros miembros.
+                                    </div>
+                                {% else %}
+                                    {% if user_data.verified_address==0 %}
+                                        <div class="alert alert-warning" role="alert">
+                                            <a href="{{ url_for('verify_address') }}">
+                                                <i class="fa fa-check" style="color: black;"></i> Verifica tu Dirección
+                                                de Residencia
+                                            </a> y mejora tu calificación de confianza ante otros miembros.
+                                        </div>
+                                    {% else %}
+                                        <div class="alert alert-warning " role="alert">
+                                            <i class="fa fa-check" style="color: dodgerblue;"></i><i
+                                                class="fa fa-check" style="color: dodgerblue;"></i> Tu Dirección de
+                                            Residencia está Verificada.
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fa fa-save"></i> Guardar
+                        </button>
+                        <button type="reset" class="btn btn-primary btn-lg">
+                            <i class="fa fa-ban"></i> Restaurar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block scripts %}
+    <!-- Country -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"
+            integrity="sha512-xvhw/4EKqdj+A/dEL/fPZ26Ki3iksy83zzZ36GF0N36I5iJcNTJNjeIqn2W8ZrxTMs9G5FxJw0fwuBsoERkXEw=="
+            crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap-select-country.min.js') }}"></script>
+
+    <!-- DatePicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Date Picker -->
+    <script>
+        $(document).ready(function () {
+            var date_input = $('input[name="birth_date"]');
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            var options = {
+                format: 'dd/mm/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            };
+            date_input.datepicker(options);
+        })
+    </script>
+    <!-- Telephone-->
+    <script src="{{ url_for('static',filename='js/intlTelInput.js') }}"></script>
+    <script>
+        var requestUrl = "https://ipinfo.io?token=84af923d57e216";
+        var detectedCountry = "PE";
+        $.ajax({
+            url: requestUrl,
+            type: 'GET',
+            success: function (json) {
+                if (json.country) {
+                    detectedCountry = json.country;
+                }
+            },
+            complete: function () {
+                window.intlTelInput(input, {
+                    initialCountry: detectedCountry,
+                    placeholderNumberType: "MOBILE",
+                    preferredCountries: ['US', 'PE'],
+                    hiddenInput: "telephone_number",
+                    separateDialCode: true,
+                    utilsScript: "{{ url_for('static',filename='js/utils.js') }}",
+                });
+            }
+        });
+
+
+        var input = document.querySelector("#phone");
+
+    </script>
+{% endblock %}

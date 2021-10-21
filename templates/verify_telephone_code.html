@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg">
+            <div class="card">
+                <form method="post" enctype="multipart/form-data"
+                      class="form-horizontal">
+                    <div class="card-header">
+                        <strong>Verificación de Número Móvil</strong>
+                    </div>
+                    <div class="card-body card-block">
+                        <!-- Teléfono -->
+                        <div class="row form-group">
+                            <div class="col col-md-4">
+                                <label for="text-input" class=" form-control-label">Ingresa el Código</label>
+                            </div>
+                            <div class="col col-md-4">
+                                <input class="form-control input-lg" type="text" id="verification_code"
+                                       name="verification_code">
+
+                                <small class="form-text text-muted">Código de Verificación</small>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="alert alert-info" role="alert">
+                                    Coloca el código que recibiste para poder validar el número telefónico.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fa fa-save"></i> Validar Código
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg">
+            <div class="card">
+                <form action="/verify_telephone_process" method="post" enctype="multipart/form-data"
+                      class="form-horizontal">
+                    <div class="card-header">
+                        <strong>Verificación de Número Móvil</strong>
+                    </div>
+                    <div class="card-body card-block">
+                        <!-- Teléfono -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Teléfono</label>
+                            </div>
+                            <div class="col col-md-9">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="btn-lg label-warning">{{ user_data.telephone_number }}</label>
+
+                                        <small class="form-text text-muted">Número Telefónico a Verificar</small>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="rg_method_sms" name="rg_method" value="sms"
+                                                   class="custom-control-input" checked>
+                                            <label class="custom-control-label" for="rg_method_sms">Mensaje vía SMS</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="rg_method_call" name="rg_method" value="call"
+                                                   class="custom-control-input">
+                                            <label class="custom-control-label" for="rg_method_call">Llamada Automatizada</label>
+                                        </div>
+                                        <small class="form-text text-muted">Método de Contacto</small></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-md-12">
+                                <div class="alert alert-info" role="alert">
+                                    Selecciona el método de contacto que desees (SMS o Llamada Automatizada). Nuestro
+                                    sistema te enviará un SMS o te llamará para dictarte un código de verificación. Haz
+                                    click en Verificar Ahora cuando estés listo.
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fa fa-save"></i> Verificar Ahora
+                        </button>
+                        <a href="{{ url_for('account') }}" class="btn btn-danger btn-lg">
+                            <i class="fa fa-ban"></i> Cancelar Verificación
+                        </a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

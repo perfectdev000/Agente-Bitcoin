@@ -1,0 +1,225 @@
+{% extends "layout.html" %}
+{% block styles %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css"
+          integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css"
+          integrity="sha512-ARJR74swou2y0Q2V9k0GbzQ/5vJ2RBSoCWokg4zkfM29Fb3vZEQyv0iWBMW/yvKgyHSR/7D64pFMmU8nYmbRkg=="
+          crossorigin="anonymous"/>
+    <style>
+        .filter-option-inner-inner {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .dropdown-item {
+            font-size: large;
+        }
+
+        .dropdown-header {
+            font-size: medium;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="overview-wrap">
+                <h2 class="title-1">Comprar Bitcoin</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row m-t-25">
+        <div class="col-lg-6">
+            <div class="trade-chart">
+                <form class="range-field w-75" action="{{ url_for('buy') }}" method="POST">
+                    <input type="hidden" name="currencyCode" id="currencyCode" value="PEN">
+                    <div class="overview__inner">
+                        <div class="overview-box clearfix">
+                            <div class="icon">
+                                <i class="zmdi zmdi-shopping-cart"></i>
+                            </div>
+                            <div class="text">
+                                <p style="color: white;font-weight:bold;font-size: x-large;">Pagas S/ <label
+                                        id="buyPrice"></label></p>
+                                <!--p>Recibes <label
+                                        id="btcToBuyQuoteLabel"></label> BTC</p//-->
+                                <h6 style="color: white">Valor de 1 BTC = S/ <label id="btcPrice"></label>
+                                    <label id="refreshCounter" style="color:white;font-weight: normal;"></label>
+                                </h6>
+                                <h6 style="color: white">Comisión: <label id="commission"></label>% = PEN <label
+                                        id="commissionValue"></label></h6>
+                            </div>
+                        </div>
+                        <div class="divValueSpan"
+                             style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;font-size:xx-large;">
+                            <input id="sliderBtcToBuy" name="sliderBtcToBuy" class="range-input" type="range" min="1"
+                                   max="1000" value="50"/>
+                            <p>Recibes</p>
+                            <button type="button" onclick="javascript:stepSlider(-1);">
+                                <i class="fa fa-minus-circle" style="cursor: pointer;"></i>
+                            </button>
+                            <label id="btcToBuySliderLabel"></label> BTC
+                            <button type="button" onclick="javascript:stepSlider(+1);">
+                                <i class="fa fa-plus-circle" style="cursor: pointer;"></i>
+                            </button>
+                        </div>
+                        <div class="form-group input-group-lg">
+                            <h4 style="color: white">Recibir en la Dirección Wallet:</h4>
+                            <input class="form-control input-group-lg" style="font-weight: bold;" id="walletAddress"
+                                   name="walletAddress"
+                                   type="text" placeholder="Dirección Wallet" required>
+                        </div>
+                        <div class="form-group input-group-lg">
+                            <h4 style="color: white">Escoge la Forma de Pago:</h4>
+                            <select style="font-weight:bold;" name="payMethod" id="payMethod"
+                                    class="form-control input-group-lg selectpicker"
+                                    data-live-search="true" title="Seleccione Una Forma de Pago" required>
+                                <optgroup label="Transferencia o Depósito Bancario">
+                                    <option value="1">BCP Banco de Crédito</option>
+                                    <option value="2">BBVA Banco Continental</option>
+                                    <option value="3">Interbank</option>
+                                    <option value="4">Scotiabank</option>
+                                </optgroup>
+                                <optgroup label="Otros Medios de Pago (+5%)">
+                                    <option value="5">Tarjeta de Crédito</option>
+                                    <option value="6">Saldo Mercado Libre</option>
+                                    <option value="7">Saldo PayPal</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div style="text-align: center;">
+                            <button onclick="checkAddress();" class="btn btn-default btn-lg">
+                                <i class="fa fa-check"></i> Iniciar Operación
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="alert alert-info">
+                <div style="text-align: justify;">
+                    <h4><i class="fa fa-info-circle"></i> Comisiones Dinámicas:</h4>
+                    <hr>
+                    <p><b>Agente Bitcoin</b> garantiza mejores comisiones mientras más compres:
+                        Nuestro porcentaje de comisión disminuye cuando incrementas el volumen de compra.
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>Toma en
+                        cuenta que el precio varía en el tiempo. Al iniciar la operación se calculará y bloqueará el
+                        precio del momento y tendrás 15 minutos para completar el pago.</p>
+                    <p>&nbsp;</p>
+                    <p>Aceptamos depósitos y transferencias en los siguientes bancos: BCP Banco de Crédito, BBVA
+                        Continental, Interbank, Scotiabank. También puedes comprar con Tarjeta de Crédito, Saldos de Mercado Libre y Paypal, con una comisión
+                        adicional de 5%.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static',filename='js/wallet-address-validator.min.js') }}"></script>
+
+    <script>
+        function checkAddress() {
+            if (!WAValidator.validate(document.getElementById('walletAddress').value, 'bitcoin')) {
+                alert("Ingresa una dirección válida.");
+                document.getElementById('walletAddress').value = '';
+            }
+
+        }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"
+            integrity="sha512-tCkLWlSXiiMsUaDl5+8bqwpGXXh0zZsgzX6pB9IQCZH+8iwXRYfcCpdxl/owoM6U4ap7QZDW4kw7djQUiQ4G2A=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"
+            integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg=="
+            crossorigin="anonymous"></script>
+    <script>
+        const $buyPrice = $('#buyPrice');
+        const $btcPrice = $('#btcPrice');
+        const $btcToBuySliderLabel = $('#btcToBuySliderLabel');
+        //const $btcToBuyQuoteLabel = $('#btcToBuyQuoteLabel');
+        const $commission = $('#commission');
+        const $commissionValue = $('#commissionValue');
+        const $sliderBtcToBuy = $('#sliderBtcToBuy');
+
+        var priceCurrencyValue = 0;
+        var priceToPay = 0;
+        var btcToBuy = 0;
+        var commissionPercentage = 0;
+        var commissionValue = 0;
+        var myRefreshCounter = setInterval(myTimer, 1000);
+        var countDown = 60;
+
+        function myTimer() {
+            countDown--;
+            $("#refreshCounter").html(" ... actualizando en " + countDown);
+            if (countDown == 0) {
+                callBtcPrice("PEN");
+                $("#refreshCounter").html(" ... actualizado.");
+                countDown = 60;
+            }
+        }
+
+        function calcCommissionPercentage() {
+            var minCommission = 0.07
+            var logFactor = 0.0275
+            commissionPercentage = Math.max(minCommission, minCommission - logFactor * Math.log(btcToBuy));
+        }
+
+        function calcBuyPrice() {
+            commissionValue = (priceCurrencyValue * btcToBuy * commissionPercentage).toFixed(0);
+            priceToPay = (priceCurrencyValue * btcToBuy * (1 + commissionPercentage)).toFixed(0);
+        }
+
+        function callBtcPrice(curCode) {
+            var xmlhttp = new XMLHttpRequest();
+            var url = "https://api.coindesk.com/v1/bpi/currentprice/" + curCode + ".json";
+            xmlhttp.onreadystatechange = function callbackBtcPrice() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var json = JSON.parse(this.responseText);
+                    var priceCurrency = parseFloat((json["bpi"][curCode]["rate"]).replace(/[^\d\.\-]/g, ""));
+                    priceCurrencyValue = priceCurrency.toFixed(2);
+                    $btcPrice.html(priceCurrencyValue);
+                    renderQuote()
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+
+        function renderQuote() {
+            btcToBuy = $sliderBtcToBuy.val() / 1000;
+            calcCommissionPercentage();
+            calcBuyPrice();
+            $buyPrice.html(priceToPay);
+            $commissionValue.html(commissionValue);
+            $btcToBuySliderLabel.html(btcToBuy.toFixed(3));
+            //$btcToBuyQuoteLabel.html(btcToBuy.toFixed(3));
+            $commission.html((commissionPercentage * 100).toFixed(2));
+        }
+
+        function stepSlider(step) {
+            var newSliderValue = parseInt($('#sliderBtcToBuy').val()) + step;
+            if (newSliderValue >= 1 && newSliderValue <= 1000) {
+                $('#sliderBtcToBuy').val(newSliderValue);
+                renderQuote();
+            }
+        }
+
+        $(document).ready(function () {
+            callBtcPrice("PEN");
+            $sliderBtcToBuy.on('input change', () => {
+                renderQuote();
+            });
+        });
+    </script>
+{% endblock %}

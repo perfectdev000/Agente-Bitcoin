@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5DPN3MB');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}">
+    <title>Agente Bitcoin</title>
+
+</head>
+
+<body id="page-top">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DPN3MB"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="spinner-wrapper">
+    <div class="spinner"></div>
+</div>
+<!-- header section start -->
+<div class="hero hero-waves" style="  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);">
+    <div id="particles-js"></div>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img
+                    src="{{ url_for('static', filename='img/logo-white.png') }}" alt="" class="img-fluid"
+                    style="width: 180px;"></a>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#page-top">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">Criptomonedas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#services">Características</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#pricing">Niveles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#team">Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#noticias">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 offset-md-1">
+                    <h1>Tu plataforma <br> para Invertir en Criptomonedas</h1>
+                    <p class="mb-4">Rendimientos entre 30% a 700% al seguir nuestras recomendaciones, según tu Perfil de
+                        Inversión</p>
+                    <a href="{{ url_for('member') }}" class="btn btn-royalblue">Zona de Miembros</a>
+                    <a href="#contact" class="btn btn-success js-scroll-trigger">Contáctanos</a>
+                    <!-- <a href="#" class="btn btn-sm animated-button victoria-four">Sign Up</a> -->
+                </div>
+                <div class="col-sm-6">
+                    <div class="avatar">
+                        <img src="{{ url_for('static', filename='img/iphone.png') }}" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <svg id="svg2" viewBox="0 0 100 30" version="1.1" preserveAspectRatio="none">
+        <path id="path6"
+              d="m-100 1.041s61.625-4.5064 99.75 5.2333 70.594 15.391 124.5 16.312c55.25 0.9437 75.75-8.8513 75.75-8.8513v16.266h-300v-28.959z"
+              style="fill:#fff;fill-opacity:.2" class="layer5"/>
+        <path id="path8"
+              d="m-100 30h300v-6.6791s-16.526 2.7112-62.25 2.3702c-58.5-0.436-97.875-12.245-153.75-15.599-55.875-3.3549-84-0.2745-84-0.2745v20.182z"
+              style="fill:#fff;fill-opacity:.2" class="layer4"/>
+        <path id="path10"
+              d="m200 16.232s-24.625-5.6378-84.5-3.7495c-59.875 1.8882-74.962 15.943-144 16.562-50.75 0.455-71.5-3.7697-71.5-3.7697v4.7252h300v-13.768z"
+              style="fill:#fff;fill-opacity:.2" class="layer3"/>
+        <path id="path12"
+              d="m200 1.041s-61.625-4.5064-99.75 5.2333-70.594 15.391-124.5 16.311c-55.25 0.9437-75.75-8.8513-75.75-8.8513v16.266h300v-28.959z"
+              style="fill:#fff;fill-opacity:.2" class="layer2"/>
+        <path id="path14"
+              d="m-100 17.511s29.006-2.6495 75-0.6876c60.25 2.5701 81.25 11.545 150.25 11.912 55.721 0.2965 74.75-5.6414 74.75-5.6414v6.906h-300v-12.489z"
+              style="fill:#fff" class="layer1"/>
+    </svg>
+</div>
+<!-- end header section -->
+
+<div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; padding:1px;padding: 0px; margin: 0px; width: 100%;">
+    <div style="height:40px; padding:0px; margin:0px; width: 100%;">
+        <iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=no"
+                width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+                style="border:0;margin:0;padding:0;"></iframe>
+    </div>
+</div>
+
+
+<!-- about section start -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="row d-flex align-items-center mb-180">
+            <div class="col-lg-6">
+                <h1>Accede hoy al <span>Mundo Cripto</span></h1>
+                <p>Disfruta comprar y vender activos digitales. Desde el año 2009, las criptomonedas han llegado para
+                    quedarse y cambiar nuestra forma de pensar, invertir y ahorrar.</p>
+                <p>Nuestra plataforma es la más segura para almacenar, invertir, comprar y vender Bitcoin, Ethereum,
+                    Litecoin y otras criptomonedas.</p>
+                <button class="btn btn-black mt-3">Regístrate Hoy!</button>
+            </div>
+            <div class="col-lg-6">
+                <div class="crypto-wrapper">
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/Augur.png') }}"
+                            alt=""></div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/Bitcoin.png') }}"
+                            alt=""></div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/Dash.png') }}" alt="">
+                    </div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/Litecoin.png') }}"
+                            alt=""></div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/Ripple.png') }}"
+                            alt=""></div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/ByteCoin.png') }}"
+                            alt=""></div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/BitShares.png') }}"
+                            alt=""></div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/Ripple.png') }}"
+                            alt=""></div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/ByteCoin.png') }}"
+                            alt=""></div>
+                    <div class="crypto-logo"><img
+                            src="{{ url_for('static',filename='img/rounded-square-colored/256x256/BitShares.png') }}"
+                            alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="coin-section">
+            <div class="row ">
+                <div class="col-sm-12">
+                    <h1 class="text-center">Cripto Inversiones - Una manera rentable y moderna de invertir</h1>
+                    <h3 class="text-center">¡Apresúrate! Únete a Nosotros</h3>
+                    <div id="owl-demo">
+                        <div class="item">
+                            <div class="crypto-card">
+                                <img src="{{ url_for('static',filename='img/svg/Bitcoin.svg') }}"
+                                     style="width:72px;height:72px;" alt="">
+                                <h3>Bitcoin</h3>
+                                <h2>+180,000%</h2>
+                                <h5>Desde el 2012</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="crypto-card">
+                                <img src="{{ url_for('static',filename='img/svg/Ripple.svg') }}"
+                                     style="width:72px;height:72px;" alt="">
+                                <h3>Ripple</h3>
+                                <h2>+3,000%</h2>
+                                <h5>Desde el 2017</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="crypto-card">
+                                <img src="{{ url_for('static',filename='img/svg/Ethereum.svg') }}"
+                                     style="width:72px;height:72px;" alt="">
+                                <h3>Ethereum</h3>
+                                <h2>+2,100%</h2>
+                                <h5>Desde el 2017</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="crypto-card">
+                                <img src="{{ url_for('static',filename='img/svg/Litecoin.svg') }}"
+                                     style="width:72px;height:72px;" alt="">
+                                <h3>Litecoin</h3>
+                                <h2>+1,000%</h2>
+                                <h5>Desde el 2017</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="crypto-card">
+                                <img src="{{ url_for('static',filename='img/svg/Monero.svg') }}"
+                                     style="width:72px;height:72px;" alt="">
+                                <h3>Monero</h3>
+                                <h2>+650%</h2>
+                                <h5>Desde el 2017</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="crypto-card">
+                                <img src="{{ url_for('static',filename='img/svg/EOS.svg') }}"
+                                     style="width:72px;height:72px;" alt="">
+                                <h3>EOS</h3>
+                                <h2>+45%</h2>
+                                <h5>Desde el 2017</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="crypto-card">
+                                <img src="{{ url_for('static',filename='img/svg/Dash.svg') }}"
+                                     style="width:72px;height:72px;" alt="">
+                                <h3>Dash</h3>
+                                <h2>-25%</h2>
+                                <h5>Desde el 2017</h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="crypto-card">
+                                <img src="{{ url_for('static',filename='img/svg/BitcoinCash.svg') }}"
+                                     style="width:72px;height:72px;" alt="">
+                                <h3>Bitcoin Cash</h3>
+                                <h2>-90%</h2>
+                                <h5>Desde el 2017</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end about section -->
+<!-- parallax section start -->
+<section class="module parallax parallax-2 d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="text-wrapper align-items-center">
+                    <h1>Sé un Agente Bitcoin, Compra, Vende y Acepta Criptomonedas en tu Negocio</h1>
+                    <p>Nuestras herramientas te permiten acceder a un segmento de clientes único y exclusivo.<br>
+                        Registra tu Negocio en el Directorio de Centros Autorizados de Agente Bitcoin.</p>
+                    <a class="btn btn-success js-scroll-trigger" href="#contact">Contáctanos Hoy!</a>
+                    <!-- <a href="web-design-company-contact.html" type="button" class="btn btn-white">Contact Us</a> -->
+                    <ul class="bubbles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end parallax section -->
+<!-- services section start -->
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center">¿Porqué escoger a Agente Bitcoin?</h1>
+                <h3 class="text-center">Características de Nuestra Plataforma</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="red" width="60" height="60" viewBox="0 0 24 24">
+                            <path d="M22 6.92l-1.41-1.41-2.85 3.21C15.68 6.4 12.83 5 9.61 5 6.72 5 4.07 6.16 2 8l1.42 1.42C5.12 7.93 7.27 7 9.61 7c2.74 0 5.09 1.26 6.77 3.24l-2.88 3.24-4-4L2 16.99l1.5 1.5 6-6.01 4 4 4.05-4.55c.75 1.35 1.25 2.9 1.44 4.55H21c-.22-2.3-.95-4.39-2.04-6.14L22 6.92z"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h2>Múltiples Monedas</h2>
+                        <p>Bitcoin, Ethereum, Litecoin y muchas otras criptomonedas. Disfruta un catálogo actualizado
+                            las 24 horas del día, intercambia tus monedas en línea.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="green" width="60" height="60"
+                             viewBox="0 0 24 24">
+                            <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h2>Acceso Fácil y Seguro</h2>
+                        <p>Brindamos un monedero privado y exclusivo para todas tus criptomonedas. Utilizamos los
+                            mecanismos de seguridad más reconocidos en la industria.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="pink" width="60" height="60" viewBox="0 0 24 24">
+                            <path d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h2>Compra y Venta Express</h2>
+                        <p>¿En un apuro? Ahora puedes comprar o vender tus criptomonedas y pagar o recibir dinero en tu
+                            moneda preferida y banco local.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <svg class="blue" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h2>Confianza</h2>
+                        <p>Agente Bitcoin tiene el respaldo de una empresa legalmente constituida. Al convertirte en un
+                            Agente Bitcoin formas parte del círculo de confianza que brinda nuestra plataforma.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end services section -->
+<!-- pricing section start -->
+<section id="pricing" class="bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center">Tipos de Agente</h1>
+                <h3 class="text-center">Un Nivel para Cada Necesidad</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="price-table">
+                    <div class="price-head">
+                        <h4>Agente Clásico</h4>
+                        <h2>$0 <span>/mes</span></h2>
+                    </div>
+                    <div class="price-content">
+                        <ul>
+                            <li>Compra y Vende sin límites</li>
+                            <li>Monedero Seguro</li>
+                            <li>Soporte en Línea 24 x 7</li>
+                            <li>Acceso Seguro</li>
+                        </ul>
+                    </div>
+                    <div class="price-button">
+                        <a href="#">Obtener</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="price-table">
+                    <div class="price-head">
+                        <h4>Agente Negocios</h4>
+                        <h2>$15 <span>/mes</span></h2>
+                    </div>
+                    <div class="price-content">
+                        <ul>
+                            <li>Beneficios Agente Clásico</li>
+                            <li>Monedero Ultra Seguro</li>
+                            <li>Plataforma Multiusuario y multifirma</li>
+                            <li>QR para tus productos y servicios</li>
+                        </ul>
+                    </div>
+                    <div class="price-button">
+                        <a href="#">Obtenlo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="price-table">
+                    <div class="price-head">
+                        <h4>Agente Patrimonio</h4>
+                        <h2>$25<span>/mes</span></h2>
+                    </div>
+                    <div class="price-content">
+                        <ul>
+                            <li>Beneficios Agente Negocios</li>
+                            <li>Protección a Herederos</li>
+                            <li>Alertas de Inversión</li>
+                            <li>Ejecutivo Asignado</li>
+                        </ul>
+                    </div>
+                    <div class="price-button">
+                        <a href="#">Obtenlo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end pricing section -->
+<!-- team section start -->
+<section id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Nuestro Equipo</h1>
+            </div>
+            <div class="col-lg-4">
+                <div class="card team">
+                    <div class="imagebox">
+                        <img src="{{ url_for('static',filename='img/team1.jpg') }}" alt="" class="img-fluid ">
+                    </div>
+                    <div class="content">
+                        <h2>Javier Robles</h2>
+                        <h3>Director</h3>
+                        <div class="social-wrapper">
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-linkedin "></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card team">
+                    <div class="imagebox">
+                        <img src="{{ url_for('static',filename='img/team2.jpg') }}" alt="" class="img-fluid ">
+                    </div>
+                    <div class="content">
+                        <h2>John Doe</h2>
+                        <h3>Customer Care</h3>
+                        <div class="social-wrapper">
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-linkedin "></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card team">
+                    <div class="imagebox">
+                        <img src="{{ url_for('static',filename='img/team3.jpg') }}" alt="" class="img-fluid ">
+                    </div>
+                    <div class="content">
+                        <h2>Paola Aguirre</h2>
+                        <h3>Sales Manager</h3>
+                        <div class="social-wrapper">
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-linkedin "></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end team section -->
+<!-- blog section start -->
+<section id="noticias" class="bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 mx-auto text-center">
+                <h1>Noticias</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-stretch-md">
+                <div class="blog-card">
+                    <img src="{{ url_for('static',filename='img/blog1.jpg') }}" alt="" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>El suministro activo de Bitcoin alcanza un mínimo de 19 meses: ¿es alcista o bajista?</h3>
+                        <p>El suministro activo de Bitcoin alcanzó un mínimo de 19 meses, emulando una configuración
+                            previa a la tendencia sostenida al alza de 2017.</p>
+                        <div class="blog-wrapper">
+                            <div class="date">
+                                <p>17/07/2020</p>
+                            </div>
+                            <div class="blog-link"><a target="_blank"
+                                                      href="https://es.cointelegraph.com/news/bitcoins-active-supply-hits-19-month-low-is-it-bullish-or-bearish">Leer
+                                Más...</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch-md">
+                <div class="blog-card">
+                    <img src="{{ url_for('static',filename='img/blog2.jpg') }}" alt="" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>El hackeo de Twitter le da otra vez una imagen negativa a Bitcoin</h3>
+                        <p>Los piratas informáticos se tomaron las cuentas pertenecientes a figuras tan conocidas como
+                            Elon Musk, Bill Gates y Barack Obama en un aparente esfuerzo por obtener ingresos estafando
+                            a las personas con Bitcoin.</p>
+                        <div class="blog-wrapper">
+                            <div class="date">
+                                <p>17/07/2020</p>
+                            </div>
+                            <div class="blog-link"><a target="_blank"
+                                                      href="https://cnnespanol.cnn.com/2020/07/17/el-hackeo-de-twitter-le-da-otra-vez-una-imagen-negativa-a-bitcoin/">Leer
+                                Más...</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch-md">
+                <div class="blog-card">
+                    <img src="{{ url_for('static',filename='img/blog3.jpg') }}" alt="" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>Proyecto blockchain de México contra Covid-19 es premiado por el MIT</h3>
+                        <p>El Instituto Tecnológico de Massachusetts (MIT) premió una propuesta de México que utiliza
+                            tecnología de contabilidad distribuida (DLT) o blockchain para la trazabilidad de una
+                            potencial vacuna contra el COVID-19.</p>
+                        <div class="blog-wrapper">
+                            <div class="date">
+                                <p>18/07/2020</p>
+                            </div>
+                            <div class="blog-link"><a target="_blank"
+                                                      href="https://www.criptonoticias.com/negocios/pruebas-concepto/proyecto-blockchain-mexico-covid-19-premiado-mit/">Leer
+                                Más...</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end blog section -->
+<!-- faq section start -->
+<section id="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 mx-auto">
+                <h1>Preguntas Frecuentes</h1>
+                <div id="accordion" role="tablist">
+                    <div class="card">
+                        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <div class="card-header">
+                                <p class="mb-0">¿Cómo Invierto en Bitcoins?</p>
+                            </div>
+                        </a>
+                        <div id="collapseOne" class="collapse " role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Existen cuatro mecanismos principales de Inversión en Bitcoin que brinda nuestra
+                                    plataforma, con niveles de riesgos y retornos distintos: Compra y Venta de Corto
+                                    Plazo, Minería, Ahorro a Largo Plazo y Trading Automatizado.</p>
+                                <table border="1" cellpadding="5">
+                                    <thead>
+                                    <tr>
+                                        <th>Estrategia</th>
+                                        <th>Riesgo</th>
+                                        <th>Retorno</th>
+                                        <th>Expectativa</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Compra/Venta Diaria o Semanal<br>Disfruta el Trading como una Profesión.
+                                        </td>
+                                        <td>Bajo</td>
+                                        <td>Bajo</td>
+                                        <td>10%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Minería<br>Se parte de la creación del próximo bloque y comparte las
+                                            recompensas del Minado.
+                                        </td>
+                                        <td>Medio</td>
+                                        <td>Medio</td>
+                                        <td>5% a 20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Compra a Largo Plazo (HODL)<br>Compra Hoy, Disfruta Después.</td>
+                                        <td>Alto</td>
+                                        <td>Alto</td>
+                                        <td>-25% a 40%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trading Automatizado<br>Alquila Un Robot, quien realiza las operaciones por
+                                            ti.
+                                        </td>
+                                        <td>Muy Alto</td>
+                                        <td>Muy Alto</td>
+                                        <td>-100% a 1500%</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false"
+                           aria-controls="collapseTwo">
+                            <div class="card-header">
+                                <p class="mb-0">¿Qué necesito para Invertir?</p>
+                            </div>
+                        </a>
+                        <div id="collapseTwo" class="collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>El primer paso es tener una billetera (también llamado wallet o monedero). Esta
+                                    billetera digital almacena tus criptomonedas. Puedes utilizar una propia o abrir una
+                                    con nosotros, es gratis!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false"
+                           aria-controls="collapseThree">
+                            <div class="card-header">
+                                <p class="mb-0">Pregunta 3</p>
+                            </div>
+                        </a>
+                        <div id="collapseThree" class="collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Lorem Ipsum et Dolor...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false"
+                           aria-controls="collapseFour">
+                            <div class="card-header">
+                                <p class="mb-0">Pregunta 4</p>
+                            </div>
+                        </a>
+                        <div id="collapseFour" class="collapse" role="tabpanel" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>Lorem Ipsum et Dolor...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end faq section -->
+<!-- contact section start -->
+<section id="contact" class="bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Contáctanos</h1>
+            </div>
+            <div class="col-sm-5">
+                <div id="mymap"></div>
+            </div>
+            <div class="col-sm-7">
+                <form id="contact-form" method="post" action="contact.php">
+                    <div class="messages"></div>
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="form_name">Nombres *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control"
+                                           placeholder="Ingrese sus Nombres *" required="required"
+                                           data-error="Nombres requeridos.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Apellidos *</label>
+                                    <input id="form_lastname" type="text" name="surname" class="form-control"
+                                           placeholder="Ingrese sus Apellidos *" required="required"
+                                           data-error="Apellidos requeridos.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="form_email">Email *</label>
+                                    <input id="form_email" type="email" name="email" class="form-control"
+                                           placeholder="Ingrese su email *" required="required"
+                                           data-error="Email es requerido.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="form_phone">Teléfono</label>
+                                    <input id="form_phone" type="tel" name="phone" class="form-control"
+                                           placeholder="Ingrese su teléfono">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="form_message">Mensaje *</label>
+                                    <textarea id="form_message" name="message" class="form-control"
+                                              placeholder="Escriba su mensaje *" rows="4" required="required"
+                                              data-error="Por favor, escribe un mensaje."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <input type="submit" class="btn btn-success btn-send disabled" value="ENVIAR MENSAJE">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end contact section -->
+<div id="crypto-carousel">
+    <div id="owl-demo2" class="owl-carousel owl-theme">
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Bitcoin.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Litecoin.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Dash.png') }}" alt="" class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Ripple.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Siacoin.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Augur.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/ByteCoin.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Monero.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Ethereum.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Xaurum.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static',filename='img/rounded-square-colored/32x32/Decred.png') }}" alt=""
+                 class="mb-2">
+            <h4>Buy: 0.00002323</h4>
+            <h4>Sell: 0.00002323</h4>
+        </div>
+    </div>
+</div>
+<!-- footer start -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 ">
+                <h3>Agente Bitcoin</h3>
+                <p>Somos un conglomerado de agentes encargados de difundir y facilitar la Compra y Venta de
+                    criptomonedas en el Perú y Latinoamérica. Únete a nosotros y gana comisión en todas tus
+                    transacciones. Tu dinero está siempre protegido y las ganancias garantizadas.</p>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <h3>Address</h3>
+                <ul class="address">
+                    <li><i class="fa fa-map-marker"></i>Calle Cuarenta 190,
+                        <br> San Isidro, Lima, Perú
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h3>Teléfonos</h3>
+                <ul class="phone">
+                    <li>
+                        <i class="fa fa-phone"></i>+51 998 308 759
+                    </li>
+                    <li>
+                        <i class="fa fa-phone"></i>+51 933 619 476
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h3>Horario de Oficina</h3>
+                <ul class="time">
+                    <li>
+                        <i class="fa fa-clock-o"></i>L-V: 09.00-17.00
+                    </li>
+                    <li><i class="fa fa-clock-o"></i>Sáb: 09.00-13.00</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+<script src="{{ url_for( 'static', filename='js/jquery.easing.min.js') }}"></script>
+<script src="{{ url_for( 'static', filename='js/particles.min.js') }}"></script>
+<script src="{{ url_for( 'static', filename='js/owl.carousel.js') }}"></script>
+<script src="{{ url_for( 'static', filename='js/validator.js') }}"></script>
+<script src="{{ url_for( 'static', filename='js/contact.js') }}"></script>
+<script src="{{ url_for( 'static', filename='js/index.js') }}"></script>
+<script src="{{ url_for( 'static', filename='js/app.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuDtFSrPxchfHrEReofUa0Enxz2nbIPRM"></script>
+<script src="{{ url_for( 'static', filename='js/prettymap.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        //Preloader
+        $(window).on("load", function () {
+            preloaderFadeOutTime = 500;
+
+            function hidePreloader() {
+                var preloader = $('.spinner-wrapper');
+                preloader.fadeOut(preloaderFadeOutTime);
+            }
+
+            hidePreloader();
+        });
+    });
+</script>
+</body>
+
+</html>
